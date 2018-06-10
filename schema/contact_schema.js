@@ -15,7 +15,14 @@ var contact_schema = new Schema({
     required: [true, 'Name is required.']
   },
   email: String,
-  number: String
+  number: String,
+  publish: {
+    type: Boolean,
+    default: false
+  },
+  published_at: {
+    type: Date
+  }
 })
 
 contact_schema.statics.getAll = function (query = {}) {
